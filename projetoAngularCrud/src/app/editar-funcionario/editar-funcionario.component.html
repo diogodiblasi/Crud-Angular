@@ -1,0 +1,28 @@
+<p>Editar Funcionario</p>
+
+<div class="well">
+    <form #formFuncionario="ngForm">
+        <div class="form-group">
+            <label for="nome">Funcionario:</label>
+            <input type="text" class="form-control" id="nome" name="nome" minlength="5" 
+            [(ngModel)]="funcionario.nome"
+            #nome="ngModel" minlength="5" required>   
+            <div class="alert alert-danger">
+                <div>
+                    Digite o nome do Funcionário
+                </div>
+                <div>
+                    O Funcionário deve conter ao menos 5 caracteres
+                 </div>
+            </div>
+        </div>
+        <div class="form-group text-center">
+            <input type="submit" (click)= "atualizar()"  class="btn btn-success" value="Atualizar">
+            <a [routerLink]=" ['/funcionarios']"
+                class="btn btn-default">
+                <span class="glyphicon glyphicon-chevron-left"
+                    aria-hidden="true"></span> Voltar
+            </a>   
+       </div>
+    </form>
+</div>
